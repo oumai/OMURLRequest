@@ -1,0 +1,78 @@
+//
+//  PrefixHeader.pch
+//  OMURLRequest
+//
+//  Created by MichaeOu on 2017/5/17.
+//  Copyright © 2017年 康美. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+/*
+ ①✅天使医生
+ */
+#import "AFNetworking.h"
+#import "JSONKit.h"
+#import "DesEncrypt.h"
+#import "OMURLConnection.h"
+
+
+#define pKey @"*JUMPER*"       //DES加密key
+#define sKey @"JUMPER2014API"  //MD5加密key
+#define normalUrl @"http://mobile.jumper-health.com"//正式接口
+#define OMURLSring @"%@/mobile/api%@/handler.do?method=%@&params=%@&sign=%@" //URL
+#define k_NslogDesData  NSLog(@"请求成功 = %@",[OMURLConnection doDESDecrypt:responseString]);
+
+
+
+
+/*
+ 
+ ②✅健康BAT
+ */
+#import "Singleton.h"
+
+//网络
+#define APP_API_URL @"http://api.test.jkbat.com"//API
+
+
+
+/*
+ ③✅康美云健康
+ */
+#define kServerAddress          @"watch.medquotient.com:8880"             //手表后台
+#ifdef DEBUG
+#define DMLog(...) NSLog(__VA_ARGS__)
+#else
+#define DMLog(...) do { } while (0)
+#endif
+
+
+
+/*
+ 
+ ④✅一点万象
+ */
+
+// 发布(正式包)
+#define MC_DISTRIBUTION 1
+
+// 发布(测试包)
+#define MC_DISTRIBUTION_AD_HOC 0
+
+#if MC_DISTRIBUTION_AD_HOC
+#define NSLog(x, ...)   // 开发时使用系统的 NSLog 无需自定义
+#else
+#endif
+
+
+//找店首页
+// G Y(mallNo, pageNum) N(disCountInfos<折扣信息>, shopCode<店铺Code>, shopFloor<商铺楼层>, shopId<商铺id>, shopName<商铺名称>, shopPicture<商铺logo>,  shopType<商铺类型>)
+#define API_SEARCHSHOP_MAIN             API_BASE_V1"merchant/searchShop"
+
+
+#endif /* PrefixHeader_pch */
