@@ -20,7 +20,7 @@
     // Override point for customization after application launch.
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
     
-    //我就随便加了一句话，怎么样
+    
     
     //编码
     NSString *string = [[NSString alloc] init];
