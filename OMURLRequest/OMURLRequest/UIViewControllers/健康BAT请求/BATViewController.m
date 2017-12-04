@@ -29,6 +29,8 @@
         NSString *responseString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         [self ConfigureAlertView:@"请求成功" message:[NSString stringWithFormat:@"%@",responseString]];
         
+        NSLog(@"responseString = %@",responseString);
+        
     } failure:^(NSError *error) {
         
         [self ConfigureAlertView:@"请求失败" message:nil];

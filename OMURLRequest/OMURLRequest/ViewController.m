@@ -41,6 +41,34 @@
     [self.view addSubview:_tableView];
     
     
+    
+    
+    int sum = 0;
+    int n = 1;
+    
+    while (sum<1000) {
+        sum+= n^3;
+        n++;
+    }
+    
+    
+    //int i = 1;
+    
+    
+    
+    for (int i = 0; i<10000; i++)
+    {
+        if ((3^i - 2^i) > 1000) {
+            
+            NSLog(@"i = %d   ^ = %d",i,(3^i - 2^i));
+        }
+
+    }
+
+    NSLog(@"log = %f",log10(100000));
+    //i++;
+    
+    
 }
 #pragma mark ------------------------------------------------------------------UITableViewDatasource Delegate-------------------------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
